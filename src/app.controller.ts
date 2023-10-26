@@ -1,6 +1,11 @@
 import { Controller, Get } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 
-@Controller()
+@ApiTags("App")
+@Controller({
+  path: "app",
+  version: "1",
+})
 export class AppController {
   @Get()
   public hello(): string {

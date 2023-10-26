@@ -1,4 +1,5 @@
 import { ConfigDto } from "./dtos";
+import { LogLevel } from "./dtos/logger-config.dto";
 
 export const plainConfig: ConfigDto = {
   configEnv: process.env.CONFIG_ENV as string,
@@ -15,5 +16,9 @@ export const plainConfig: ConfigDto = {
     defaultClientTimeout: Number(
       process.env.HTTP_DEFAULT_CLIENT_TIMEOUT ?? "60000",
     ),
+  },
+  logger: {
+    level: (process.env.LOG_LEVEL ?? LogLevel.info) as LogLevel,
+    pretty: (process.env.LOG_PRETTY ?? "false") === "true",
   },
 };
