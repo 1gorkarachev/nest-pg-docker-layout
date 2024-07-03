@@ -13,5 +13,5 @@ $ cp .env.example .env
 $ docker-compose up -d
 
 # run migrations
-$ docker-compose exec document-service npm run migration:run
+$ docker-compose exec app npm run migration:run
 ```
